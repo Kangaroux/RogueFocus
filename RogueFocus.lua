@@ -143,7 +143,7 @@ function RogueFocus:OnUpdate()
 			if(RogueFocus_Energy.Mana ~= energy) then
 				RogueFocus_Energy.Mana = energy
 			end
-			sparkPosition = ((currentTime - RogueFocus_Energy.Start) / (RogueFocus_Energy.End - RogueFocus_Energy.Start)) * 99
+			sparkPosition = ((currentTime - RogueFocus_Energy.Start) / (RogueFocus_Energy.End - RogueFocus_Energy.Start)) * RogueFocusEnergyTickBar:GetWidth()
 		end
 		
 		RogueFocusEnergyTickBar:SetMinMaxValues(RogueFocus_Energy.Start, RogueFocus_Energy.End)

@@ -20,12 +20,12 @@
 
 	<Frame name="RogueFocusFrame" toplevel="true" clampedToScreen="true" enableMouse="true" movable="true" parent="UIParent">
 		<Size>
-			<AbsDimension x="110" y="38" />
+			<AbsDimension x="119" y="38" />
 		</Size>
 		<Anchors>
-			<Anchor point="BOTTOM" relativeTo="UIParent" relativePoint="BOTTOM">
+			<Anchor point="LEFT" relativeTo="PlayerFrameManaBar" relativePoint="LEFT">
 				<Offset>
-					<AbsDimension x="0" y="120" />
+					<AbsDimension x="0" y="0" />
 				</Offset>
 			</Anchor>
 		</Anchors>
@@ -373,12 +373,12 @@
 				<Frames>
 					<StatusBar name="RogueFocusEnergyTickBar" inherits="TextStatusBar" framestrata="BACKGROUND">
 						<Size>
-							<AbsDimension x="99" y="8"/>
+							<AbsDimension x="119" y="7"/>
 						</Size>
 						<Anchors>
-							<Anchor point="TOPLEFT">
+							<Anchor point="LEFT">
 								<Offset>
-									<AbsDimension x="4" y="-8"/>
+									<AbsDimension x="0" y="2"/>
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -400,7 +400,7 @@
 						</Layers>
 						<Scripts>
 							<OnLoad>
-								this:SetFrameLevel(this:GetFrameLevel() - 1)
+								this:SetFrameLevel(PlayerFrameManaBar:GetFrameLevel() + 10)
 							</OnLoad>
 						</Scripts>
 						<!-- <BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
