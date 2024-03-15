@@ -75,17 +75,17 @@ function RogueFocus:OnEvent(eventArg)
 			-- Scaling
 			RogueFocusFrame:SetScale(RogueFocusConfig.Scale)
 			-- Combo, Energy
-			local Frame
-			for i = 1, 5, 1 do
-				Frame = _G["RogueFocusCombo"..i]
-				Frame:SetStatusBarColor(1, 0, 0)
-				Frame:SetMinMaxValues(0, 1)
-				Frame:SetValue(0)
-			end
+			-- local Frame
+			-- for i = 1, 5, 1 do
+			-- 	Frame = _G["RogueFocusCombo"..i]
+			-- 	Frame:SetStatusBarColor(1, 0, 0)
+			-- 	Frame:SetMinMaxValues(0, 1)
+			-- 	Frame:SetValue(0)
+			-- end
 			-- Energy ticks
 			RogueFocus_Energy.Mana = UnitMana("player")
 			-- Energy ticks text
-			RogueFocusEnergyTickText:SetText(ROGUEFOCUS_ENERGY)
+			-- RogueFocusEnergyTickText:SetText(ROGUEFOCUS_ENERGY)
 			-- Create slash events
 			SLASH_ROGUEFOCUS1 = "/rfc"
 			SLASH_ROGUEFOCUS2 = "/roguefocus"
@@ -159,28 +159,28 @@ end
 -- Events Handlers
 ----------------------------------------------------------------------------------------------------
 function RogueFocus:UpdateComboBar()
-	local c = GetComboPoints()
-	local comboBar = {0, 0, 0, 0, 0}
-	local barColor = {[0] = {1, 0, 0}, {1, 0, 0}, {1, 0, 0}, {1, 1, 0}, {1, 1, 0}, {0, 1, 0}}
-	local Frame
-	for i = 1, c, 1 do
-		comboBar[i] = 1
-	end
-	for i = 1, 5, 1 do
-		Frame = _G["RogueFocusCombo"..i]
-		Frame:SetStatusBarColor(barColor[c][1], barColor[c][2], barColor[c][3])
-		Frame:SetValue(comboBar[i])
-	end
+	-- local c = GetComboPoints()
+	-- local comboBar = {0, 0, 0, 0, 0}
+	-- local barColor = {[0] = {1, 0, 0}, {1, 0, 0}, {1, 0, 0}, {1, 1, 0}, {1, 1, 0}, {0, 1, 0}}
+	-- local Frame
+	-- for i = 1, c, 1 do
+	-- 	comboBar[i] = 1
+	-- end
+	-- for i = 1, 5, 1 do
+	-- 	Frame = _G["RogueFocusCombo"..i]
+	-- 	Frame:SetStatusBarColor(barColor[c][1], barColor[c][2], barColor[c][3])
+	-- 	Frame:SetValue(comboBar[i])
+	-- end
 end
 
 -- Author: Masso
 function RogueFocus:UpdateEnergyBar()
-	local value, max = UnitMana("player"), UnitManaMax("player")
-	local text = value.." / "..max
-	local Frame = _G["RogueFocusEnergyBar"]
-	Frame:SetMinMaxValues(0, max)
-	Frame:SetValue(value)
-	RogueFocusEnergyText:SetText(text)
+	-- local value, max = UnitMana("player"), UnitManaMax("player")
+	-- local text = value.." / "..max
+	-- local Frame = _G["RogueFocusEnergyBar"]
+	-- Frame:SetMinMaxValues(0, max)
+	-- Frame:SetValue(value)
+	-- RogueFocusEnergyText:SetText(text)
 end
 
 function RogueFocus:Toggle()
